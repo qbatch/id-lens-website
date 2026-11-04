@@ -1,0 +1,124 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="currentColor"></rect>
+            <path
+              d="M8 22V10h4.2l3.8 6.2L19.8 10H24v12h-3.4v-7.1L16.2 22h-2.4l-4.4-7.1V22H8z"
+              fill="#fff"></path>
+          </svg>
+        </span>
+        IDLens
+      </a>
+      <p class="tagline">ID and visa photos on your phone—private, free, and on-device.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Product">
+      <p class="footer-heading">Product</p>
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#download">Download</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Legal and help">
+      <p class="footer-heading">Legal &amp; help</p>
+      <ul>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {year} IDLens. Your photos never leave your phone.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--color-divider);
+    background: var(--color-surface);
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .brand-mark {
+    color: var(--color-accent);
+    display: flex;
+  }
+
+  .tagline {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    max-width: 20rem;
+    line-height: 1.6;
+  }
+
+  .footer-heading {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-col a {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-col a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .footer-bottom p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+</style>

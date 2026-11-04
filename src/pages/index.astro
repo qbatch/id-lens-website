@@ -1,0 +1,697 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const features = [
+  {
+    title: 'Processed on device',
+    description: 'Face detection, cropping, and background work entirely on your phone—even in airplane mode.',
+    icon: 'shield',
+  },
+  {
+    title: 'Official specs built in',
+    description: 'Passports, visas, exams, and common ID sizes with rules checked against each authority.',
+    icon: 'grid',
+  },
+  {
+    title: 'Instant compliance checks',
+    description: 'See what passes before you print or submit, with clear guidance when something needs a retake.',
+    icon: 'check',
+  },
+  {
+    title: 'No account required',
+    description: 'Start immediately. No sign-in, no ads, and no payments—just make your photo and go.',
+    icon: 'user',
+  },
+];
+
+const steps = [
+  {
+    step: '1',
+    title: 'Pick a spec',
+    body: 'Search or browse hundreds of ID and visa sizes, or reuse a recent format.',
+  },
+  {
+    step: '2',
+    title: 'Capture or import',
+    body: 'Use the guided camera or choose a photo from your gallery.',
+  },
+  {
+    step: '3',
+    title: 'Review & export',
+    body: 'Adjust crop and background, pass the checks, then save or share.',
+  },
+];
+---
+
+<BaseLayout title="IDLens">
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">On-device · Private · Free</p>
+        <h1>Make an ID photo that fits the spec—on your phone.</h1>
+        <p class="hero-lead">
+          IDLens turns a quick selfie into a passport, visa, or exam photo sized to official requirements.
+          Everything stays on your device—no upload, no account.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download">Get IDLens</a>
+          <a class="btn btn-secondary" href="/privacy">Privacy first</a>
+        </div>
+        <ul class="hero-trust" aria-label="Highlights">
+          <li>
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            Photos never leave your phone
+          </li>
+          <li>
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            Works offline
+          </li>
+          <li>
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            No ads
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mock-header">Make an ID photo</div>
+            <div class="mock-search">Search: passport, 35×45…</div>
+            <div class="mock-section">Popular</div>
+            <div class="mock-cards">
+              <div class="mock-card">
+                <span class="mock-title">Passport photo</span>
+                <span class="mock-meta">35 × 45 mm · white</span>
+              </div>
+              <div class="mock-card">
+                <span class="mock-title">Visa photo</span>
+                <span class="mock-meta">51 × 51 mm · white</span>
+              </div>
+            </div>
+            <div class="mock-badge">
+              <span class="badge-dot"></span>
+              All checks pass
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built for real document requirements</h2>
+        <p>
+          From one-inch photos to visa dimensions, IDLens combines a curated spec catalog with on-device vision
+          so you can ship a compliant photo without a studio visit.
+        </p>
+      </div>
+      <div class="feature-grid">
+        {
+          features.map((f) => (
+            <article class="feature-card">
+              <div class="feature-icon" data-icon={f.icon}>
+                {f.icon === 'shield' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M12 3l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V7l8-4z" />
+                  </svg>
+                )}
+                {f.icon === 'grid' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                  </svg>
+                )}
+                {f.icon === 'check' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M5 12l4 4L19 6" />
+                  </svg>
+                )}
+                {f.icon === 'user' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                  </svg>
+                )}
+              </div>
+              <h3>{f.title}</h3>
+              <p>{f.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Three steps from spec to export—designed to feel as simple as taking a normal photo.</p>
+      </div>
+      <ol class="steps">
+        {
+          steps.map((s) => (
+            <li class="step-card">
+              <span class="step-num">{s.step}</span>
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section privacy-band">
+    <div class="container privacy-inner">
+      <div>
+        <h2>Your photos never leave your device</h2>
+        <p>
+          IDLens makes ID and visa photos entirely on your device. Free, no ads, no account. Optional anonymous
+          usage stats never include images—you stay in control in Settings.
+        </p>
+        <a class="text-link" href="/privacy">Read the privacy policy →</a>
+      </div>
+      <div class="privacy-cards">
+        <div class="mini-card">
+          <strong>On-device</strong>
+          <span>Airplane mode ready</span>
+        </div>
+        <div class="mini-card">
+          <strong>Encrypted storage</strong>
+          <span>Delete all data anytime</span>
+        </div>
+        <div class="mini-card">
+          <strong>Camera only when needed</strong>
+          <span>No background access</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section download" id="download">
+    <div class="container download-card">
+      <div class="download-copy">
+        <h2>Get IDLens</h2>
+        <p>
+          Install IDLens on your phone to make passport, visa, or exam photos in minutes. Store download links
+          will appear here when the app is available.
+        </p>
+        <div class="store-actions">
+          <a class="store-btn" href="/support" aria-label="Download IDLens — details on support page">
+            <span class="store-label">Download IDLens</span>
+            <span class="store-sub">See support for availability</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(2.5rem, 8vw, 5rem) 0 clamp(3rem, 10vw, 6rem);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% -10%, rgba(47, 91, 234, 0.18), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, rgba(18, 128, 74, 0.08), transparent 50%),
+      linear-gradient(180deg, var(--color-accent-soft) 0%, var(--color-background) 45%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr 0.95fr;
+      gap: 4rem;
+    }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    max-width: 14ch;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-lead {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0 1.25rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+      background var(--transition),
+      color var(--transition),
+      border-color var(--transition),
+      box-shadow var(--transition),
+      transform var(--transition);
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    box-shadow: var(--shadow-accent);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-on-accent);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface-elevated);
+    color: var(--color-text-primary);
+    border-color: var(--color-divider);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .hero-trust {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .trust-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.35rem;
+    border-radius: var(--radius-full);
+    background: var(--color-success-soft);
+    color: var(--color-success);
+    font-size: 0.6875rem;
+    font-weight: 700;
+  }
+
+  .phone-frame {
+    margin-inline: auto;
+    width: min(100%, 280px);
+    padding: 10px;
+    border-radius: 2rem;
+    background: linear-gradient(145deg, #2a2d35, #0e1014);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .phone-notch {
+    width: 36%;
+    height: 6px;
+    margin: 4px auto 8px;
+    border-radius: var(--radius-full);
+    background: #1a1d24;
+  }
+
+  .phone-screen {
+    border-radius: 1.35rem;
+    background: var(--color-background);
+    padding: 1.25rem;
+    min-height: 320px;
+  }
+
+  .mock-header {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .mock-search {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-full);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .mock-section {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .mock-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .mock-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .mock-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .mock-meta {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  .mock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-full);
+    background: var(--color-success-soft);
+    color: var(--color-success);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success);
+  }
+
+  .section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+  }
+
+  .section-muted {
+    background: var(--color-surface);
+  }
+
+  .section-head {
+    max-width: 36rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-head p {
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .feature-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .feature-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-divider);
+    transition:
+      box-shadow var(--transition),
+      border-color var(--transition);
+  }
+
+  .feature-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+  }
+
+  .feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+  .steps {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .step-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--color-background);
+    border: 1px solid var(--color-divider);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .step-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .step-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+  .privacy-band {
+    background: linear-gradient(135deg, #16181d 0%, #2a3142 100%);
+    color: #fff;
+  }
+
+  .privacy-inner {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .privacy-inner {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  .privacy-band h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+  }
+
+  .privacy-band p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    max-width: 32rem;
+  }
+
+  .text-link {
+    color: #a8c4ff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: #fff;
+  }
+
+  .privacy-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mini-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1rem 1.125rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mini-card strong {
+    font-size: 0.9375rem;
+  }
+
+  .mini-card span {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .download-card {
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: var(--radius-xl);
+    background: var(--color-accent-soft);
+    border: 1px solid rgba(47, 91, 234, 0.15);
+    text-align: center;
+  }
+
+  .download-copy h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .download-copy p {
+    color: var(--color-text-secondary);
+    max-width: 28rem;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+    line-height: 1.65;
+  }
+
+  .store-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .store-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.15rem;
+    padding: 0.875rem 1.5rem;
+    min-width: 12rem;
+    border-radius: var(--radius-md);
+    background: var(--color-text-primary);
+    color: #fff;
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .store-btn:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .store-label {
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+
+  .store-sub {
+    font-size: 0.75rem;
+    opacity: 0.75;
+  }
+</style>

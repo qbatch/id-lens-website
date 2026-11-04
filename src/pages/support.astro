@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { supportFaqs, supportEmail } from '../data/site';
+---
+
+<BaseLayout
+  title="Support"
+  description="Get help with IDLens—FAQs, contact, and download information."
+>
+  <Header slot="header" />
+  <Footer slot="footer" />
+
+  <div class="page-support">
+    <div class="container support-layout">
+      <header class="support-hero">
+        <h1>Support</h1>
+        <p class="lead">
+          Need help with specs, privacy, or exports? Browse common questions below or reach out—we’re here to help.
+        </p>
+      </header>
+
+      <section class="contact-card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact us</h2>
+        <p>
+          For feedback, bug reports, or privacy questions, email us at{' '}
+          <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
+        </p>
+        <p class="contact-note">
+          When reporting an issue, include your device model, OS version, and IDLens app version from Settings
+          if you can—it helps us respond faster.
+        </p>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <div class="faq-list">
+          {
+            supportFaqs.map((item, index) => (
+              <details class="faq-item" open={index === 0}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="resources">
+        <h2>Resources</h2>
+        <ul class="resource-links">
+          <li>
+            <a href="/privacy">Privacy policy</a>
+            <span>On-device processing, storage, and optional analytics</span>
+          </li>
+          <li>
+            <a href="/">Product overview</a>
+            <span>Features and how IDLens works</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-support {
+    padding: clamp(2rem, 6vw, 3.5rem) 0 clamp(4rem, 10vw, 6rem);
+  }
+
+  .support-layout {
+    max-width: 40rem;
+  }
+
+  .support-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--color-accent-soft);
+    border: 1px solid rgba(47, 91, 234, 0.12);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-card h2,
+  .faq h2,
+  .resources h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  .contact-note {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .faq {
+    margin-bottom: 2.5rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--color-divider);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-elevated);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1rem 1.125rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0 1.125rem 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .resource-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resource-links li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 1.125rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-divider);
+    background: var(--color-surface);
+  }
+
+  .resource-links a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-text-primary);
+  }
+
+  .resource-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .resource-links span {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+</style>
