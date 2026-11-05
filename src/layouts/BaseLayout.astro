@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { appName, appNameShort } from '../data/brand';
 
 interface Props {
   title: string;
@@ -8,10 +9,10 @@ interface Props {
 
 const {
   title,
-  description = 'Make passport and visa ID photos on your phone. Free, private, on-device—no upload, no account.',
+  description = `Make passport and visa ID photos on your phone with ${appNameShort}. Free, private, on-device—no upload, no account.`,
 } = Astro.props;
 
-const fullTitle = title === 'IDLens' ? title : `${title} · IDLens`;
+const fullTitle = title === appName ? title : `${title} · ${appNameShort}`;
 ---
 
 <!doctype html>

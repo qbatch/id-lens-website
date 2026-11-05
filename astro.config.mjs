@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://idlens.app',
+  site: 'https://passportphotofit.lixul.com',
   compressHTML: true,
 });

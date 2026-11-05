@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { appNameShort } from '../data/brand';
 import { privacySections } from '../data/site';
 ---
 
 <BaseLayout
   title="Privacy policy"
-  description="How IDLens handles your photos and data—everything processed on your phone."
+  description={`How ${appNameShort} handles your photos and data—everything processed on your phone.`}
 >
   <Header slot="header" />
   <Footer slot="footer" />
@@ -17,7 +18,8 @@ import { privacySections } from '../data/site';
       <article class="prose">
         <h1>Privacy policy</h1>
         <p class="lead">
-          IDLens makes ID and visa photos on your phone. This policy explains what the app does with your data.
+          {appNameShort} makes ID and visa photos on your phone. This policy explains what the app does with your data.
+          Use of the app is also governed by our <a href="/terms">terms of use</a>.
         </p>
 
         {
@@ -31,8 +33,7 @@ import { privacySections } from '../data/site';
 
         <h2>Contact</h2>
         <p>
-          Questions about privacy? Visit our <a href="/support">support page</a> or email us through the
-          contact options listed there.
+          Questions about privacy? See our <a href="/support">support page</a> for FAQs and resources.
         </p>
       </article>
     </div>

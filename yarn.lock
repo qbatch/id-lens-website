@@ -2064,14 +2064,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"idlens-landing@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "idlens-landing@workspace:."
-  dependencies:
-    astro: ^4.16.18
-  languageName: unknown
-  linkType: soft
-
 "import-meta-resolve@npm:^4.1.0":
   version: 4.2.0
   resolution: "import-meta-resolve@npm:4.2.0"
@@ -3072,6 +3064,14 @@ __metadata:
   checksum: ffd040c4695d93f0bc370e3d6d75c1b352178514af41be7afa212475ea5cead1d6e377cd9d4cec6a5e2bcf497ca50daf9e0088eadaa37dbc271f60def08fdfcd
   languageName: node
   linkType: hard
+
+"passport-photo-fit-landing@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "passport-photo-fit-landing@workspace:."
+  dependencies:
+    astro: ^4.16.18
+  languageName: unknown
+  linkType: soft
 
 "path-exists@npm:^4.0.0":
   version: 4.0.0

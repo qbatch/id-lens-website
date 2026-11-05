@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { appName, appNameShort } from '../data/brand';
 
 const features = [
   {
@@ -45,7 +46,7 @@ const steps = [
 ];
 ---
 
-<BaseLayout title="IDLens">
+<BaseLayout title={appName}>
   <Header slot="header" />
   <Footer slot="footer" />
 
@@ -56,11 +57,11 @@ const steps = [
         <p class="eyebrow">On-device · Private · Free</p>
         <h1>Make an ID photo that fits the spec—on your phone.</h1>
         <p class="hero-lead">
-          IDLens turns a quick selfie into a passport, visa, or exam photo sized to official requirements.
+          {appNameShort} turns a quick selfie into a passport, visa, or exam photo sized to official requirements.
           Everything stays on your device—no upload, no account.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#download">Get IDLens</a>
+          <a class="btn btn-primary" href="#download">Get the app</a>
           <a class="btn btn-secondary" href="/privacy">Privacy first</a>
         </div>
         <ul class="hero-trust" aria-label="Highlights">
@@ -111,7 +112,7 @@ const steps = [
       <div class="section-head">
         <h2>Built for real document requirements</h2>
         <p>
-          From one-inch photos to visa dimensions, IDLens combines a curated spec catalog with on-device vision
+          From one-inch photos to visa dimensions, {appNameShort} combines a curated spec catalog with on-device vision
           so you can ship a compliant photo without a studio visit.
         </p>
       </div>
@@ -181,7 +182,7 @@ const steps = [
       <div>
         <h2>Your photos never leave your device</h2>
         <p>
-          IDLens makes ID and visa photos entirely on your device. Free, no ads, no account. Optional anonymous
+          {appNameShort} makes ID and visa photos entirely on your device. Free, no ads, no account. Optional anonymous
           usage stats never include images—you stay in control in Settings.
         </p>
         <a class="text-link" href="/privacy">Read the privacy policy →</a>
@@ -206,14 +207,14 @@ const steps = [
   <section class="section download" id="download">
     <div class="container download-card">
       <div class="download-copy">
-        <h2>Get IDLens</h2>
+        <h2>Get {appNameShort}</h2>
         <p>
-          Install IDLens on your phone to make passport, visa, or exam photos in minutes. Store download links
+          Install {appNameShort} on your phone to make passport, visa, or exam photos in minutes. Store download links
           will appear here when the app is available.
         </p>
         <div class="store-actions">
-          <a class="store-btn" href="/support" aria-label="Download IDLens — details on support page">
-            <span class="store-label">Download IDLens</span>
+          <a class="store-btn" href="/support" aria-label={`Download ${appName} — details on support page`}>
+            <span class="store-label">Download</span>
             <span class="store-sub">See support for availability</span>
           </a>
         </div>

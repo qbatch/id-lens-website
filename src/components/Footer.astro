@@ -1,4 +1,6 @@
 ---
+import { appNameShort } from '../data/brand';
+
 const year = new Date().getFullYear();
 ---
 
@@ -10,11 +12,11 @@ const year = new Date().getFullYear();
           <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="32" height="32" rx="8" fill="currentColor"></rect>
             <path
-              d="M8 22V10h4.2l3.8 6.2L19.8 10H24v12h-3.4v-7.1L16.2 22h-2.4l-4.4-7.1V22H8z"
+              d="M9 22V10h3.2l2.4 5.8L17 10h3v12h-3v-6.8L14.2 22H12l-2.8-6.8V22H9z"
               fill="#fff"></path>
           </svg>
         </span>
-        IDLens
+        {appNameShort}
       </a>
       <p class="tagline">ID and visa photos on your phone—private, free, and on-device.</p>
     </div>
@@ -32,13 +34,14 @@ const year = new Date().getFullYear();
       <p class="footer-heading">Legal &amp; help</p>
       <ul>
         <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
         <li><a href="/support">Support</a></li>
       </ul>
     </nav>
   </div>
 
   <div class="container footer-bottom">
-    <p>© {year} IDLens. Your photos never leave your phone.</p>
+    <p>© {year} {appNameShort}. Your photos never leave your phone.</p>
   </div>
 </footer>
 

@@ -1,4 +1,6 @@
 ---
+import { appName, appNameShort, appNameTagline } from '../data/brand';
+
 const nav = [
   { href: '/#features', label: 'Features' },
   { href: '/#how-it-works', label: 'How it works' },
@@ -12,16 +14,19 @@ const path = Astro.url.pathname;
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="IDLens home">
+    <a class="brand" href="/" aria-label={`${appName} home`}>
       <span class="brand-mark" aria-hidden="true">
         <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="32" height="32" rx="8" fill="currentColor"></rect>
           <path
-            d="M8 22V10h4.2l3.8 6.2L19.8 10H24v12h-3.4v-7.1L16.2 22h-2.4l-4.4-7.1V22H8z"
+            d="M9 22V10h3.2l2.4 5.8L17 10h3v12h-3v-6.8L14.2 22H12l-2.8-6.8V22H9z"
             fill="#fff"></path>
         </svg>
       </span>
-      <span class="brand-name">IDLens</span>
+      <span class="brand-text">
+        <span class="brand-name">{appNameShort}</span>
+        <span class="brand-tagline">{appNameTagline}</span>
+      </span>
     </a>
 
     <nav class="nav-desktop" aria-label="Primary">
@@ -91,6 +96,23 @@ const path = Astro.url.pathname;
   .brand-mark {
     color: var(--color-accent);
     display: flex;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .brand-name {
+    font-size: 1.0625rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-text-secondary);
   }
 
   .nav-desktop {

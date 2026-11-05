@@ -1,6 +1,6 @@
-# IDLens landing site
+# Passport Photo Fit landing site
 
-Marketing site for the IDLens app: home, privacy policy, and support.
+Marketing site for **Passport Photo Fit: ID & Visa** — home, privacy policy, terms, and support.
 
 ## Develop
 
@@ -26,6 +26,7 @@ Static output is written to `dist/`.
 |-------|-------------|
 | `/` | Product landing page |
 | `/privacy` | Privacy policy (aligned with in-app text) |
-| `/support` | FAQ and contact |
+| `/terms` | Terms of use (aligned with in-app user agreement) |
+| `/support` | FAQ and resources |
 
 Update copy in `src/data/site.ts` and page components as the app ships.

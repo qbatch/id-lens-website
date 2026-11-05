@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { supportFaqs, supportEmail } from '../data/site';
+import { appNameShort } from '../data/brand';
+import { supportFaqs } from '../data/site';
 ---
 
 <BaseLayout
   title="Support"
-  description="Get help with IDLens—FAQs, contact, and download information."
+  description={`Get help with ${appNameShort}—FAQs and download information.`}
 >
   <Header slot="header" />
   <Footer slot="footer" />
@@ -17,21 +18,9 @@ import { supportFaqs, supportEmail } from '../data/site';
       <header class="support-hero">
         <h1>Support</h1>
         <p class="lead">
-          Need help with specs, privacy, or exports? Browse common questions below or reach out—we’re here to help.
+          Need help with specs, privacy, or exports? Browse common questions below.
         </p>
       </header>
-
-      <section class="contact-card" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact us</h2>
-        <p>
-          For feedback, bug reports, or privacy questions, email us at{' '}
-          <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
-        </p>
-        <p class="contact-note">
-          When reporting an issue, include your device model, OS version, and IDLens app version from Settings
-          if you can—it helps us respond faster.
-        </p>
-      </section>
 
       <section class="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading">Frequently asked questions</h2>
@@ -51,12 +40,16 @@ import { supportFaqs, supportEmail } from '../data/site';
         <h2>Resources</h2>
         <ul class="resource-links">
           <li>
+            <a href="/terms">Terms of use</a>
+            <span>Using {appNameShort} and document photo specs</span>
+          </li>
+          <li>
             <a href="/privacy">Privacy policy</a>
             <span>On-device processing, storage, and optional analytics</span>
           </li>
           <li>
             <a href="/">Product overview</a>
-            <span>Features and how IDLens works</span>
+            <span>Features and how {appNameShort} works</span>
           </li>
         </ul>
       </section>
@@ -86,31 +79,11 @@ import { supportFaqs, supportEmail } from '../data/site';
     margin-bottom: 2.5rem;
   }
 
-  .contact-card {
-    padding: 1.5rem;
-    border-radius: var(--radius-lg);
-    background: var(--color-accent-soft);
-    border: 1px solid rgba(47, 91, 234, 0.12);
-    margin-bottom: 2.5rem;
-  }
-
-  .contact-card h2,
   .faq h2,
   .resources h2 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-  }
-
-  .contact-card p {
-    color: var(--color-text-secondary);
-    line-height: 1.65;
-  }
-
-  .contact-note {
-    margin-top: 0.75rem;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
   }
 
   .faq {

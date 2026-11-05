@@ -1,7 +1,9 @@
+import { appNameShort } from './brand';
+
 export const privacySections = [
   {
     title: 'Overview',
-    body: 'IDLens makes ID and visa photos on your phone. This policy explains what the app does with your data.',
+    body: `${appNameShort} makes ID and visa photos on your phone. This policy explains what the app does with your data.`,
   },
   {
     title: 'Photos',
@@ -21,7 +23,30 @@ export const privacySections = [
   },
   {
     title: 'No account, no ads, no payments',
-    body: 'IDLens is free to use with no advertising and no in-app purchases.',
+    body: `${appNameShort} is free to use with no advertising and no in-app purchases.`,
+  },
+] as const;
+
+export const termsSections = [
+  {
+    title: 'Agreement',
+    body: `${appNameShort} is free to use. By using the app or this website, you agree to these terms.`,
+  },
+  {
+    title: 'Use',
+    body: `Use ${appNameShort} to make photos of yourself, or of others with their permission, for official documents.`,
+  },
+  {
+    title: 'Specs',
+    body: 'Photo rules come from the authorities named on each spec and were checked on the date shown. Authorities can change their rules; check the official requirements before you submit a photo.',
+  },
+  {
+    title: 'Results',
+    body: 'The app checks each photo against the spec, but the final decision rests with the authority or print shop that receives it.',
+  },
+  {
+    title: 'Your data',
+    body: 'Your data stays on your device, as described in the privacy policy.',
   },
 ] as const;
 
@@ -29,12 +54,12 @@ export const supportFaqs = [
   {
     question: 'Do my photos leave my phone?',
     answer:
-      'No. IDLens processes every photo on your device. Nothing is uploaded to our servers, and the app works fully in airplane mode.',
+      `No. ${appNameShort} processes every photo on your device. Nothing is uploaded to our servers, and the app works fully in airplane mode.`,
   },
   {
     question: 'Which document sizes are supported?',
     answer:
-      'IDLens includes a catalog of passport, visa, exam, and general ID specs. Search by name or dimensions, or browse by category in the app.',
+      `${appNameShort} includes a catalog of passport, visa, exam, and general ID specs. Search by name or dimensions, or browse by category in the app.`,
   },
   {
     question: 'How do I delete my data?',
@@ -49,8 +74,8 @@ export const supportFaqs = [
   {
     question: 'Will my photo be accepted by the authority?',
     answer:
-      'IDLens checks your photo against the spec rules, but the final decision rests with the authority or print shop that receives it. Requirements can change—always confirm official requirements before submitting.',
+      `${appNameShort} checks your photo against the spec rules, but the final decision rests with the authority or print shop that receives it. Requirements can change—always confirm official requirements before submitting.`,
   },
 ] as const;
 
-export const supportEmail = 'support@idlens.app';
+export const supportEmail = 'support@passportphotofit.app';
