@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Passport Photo Fit: ID &amp; Visa</title>
+  <desc id="desc">On-device passport and visa photo app</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef2fe"/>
+      <stop offset="55%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="80" width="72" height="72" rx="16" fill="#2F5BEA"/>
+  <path d="M104 152V80h16l12 29 12-29h16v72h-15v-34l-13.5 34h-11l-13.5-34v34H104z" fill="#fff"/>
+  <text x="176" y="118" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="44" font-weight="700" fill="#16181d">Passport Photo Fit</text>
+  <text x="176" y="162" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600" fill="#5b6270">ID &amp; Visa</text>
+  <text x="80" y="260" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="32" font-weight="600" fill="#16181d">Passport &amp; visa photos on your phone.</text>
+  <text x="80" y="310" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" fill="#5b6270">Private · On-device · No account</text>
+</svg>

@@ -4,11 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { appNameShort } from '../data/brand';
 import { termsSections } from '../data/site';
+import { webPageJsonLd } from '../data/seo';
+
+const pageTitle = 'Terms of use';
+const pageDescription = `Terms for ${appNameShort}, the free app for passport, visa, and ID photos. Document specs, acceptable use, and on-device data handling.`;
 ---
 
 <BaseLayout
-  title="Terms of use"
-  description={`Terms for using ${appNameShort}—free ID and visa photo making on your device.`}
+  title={pageTitle}
+  description={pageDescription}
+  jsonLd={webPageJsonLd(pageTitle, pageDescription, Astro.url.pathname, Astro.site)}
 >
   <Header slot="header" />
   <Footer slot="footer" />

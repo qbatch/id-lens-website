@@ -4,11 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { appNameShort } from '../data/brand';
 import { supportFaqs } from '../data/site';
+import { faqPageJsonLd, webPageJsonLd } from '../data/seo';
+
+const pageTitle = 'Support';
+const pageDescription = `${appNameShort} help center: FAQs about passport and visa photo specs, privacy, offline use, data deletion, and app downloads.`;
 ---
 
 <BaseLayout
-  title="Support"
-  description={`Get help with ${appNameShort}—FAQs and download information.`}
+  title={pageTitle}
+  description={pageDescription}
+  jsonLd={[webPageJsonLd(pageTitle, pageDescription, Astro.url.pathname, Astro.site), faqPageJsonLd(supportFaqs, Astro.site)]}
 >
   <Header slot="header" />
   <Footer slot="footer" />

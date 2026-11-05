@@ -38,7 +38,7 @@ export const termsSections = [
   },
   {
     title: 'Specs',
-    body: 'Photo rules come from the authorities named on each spec and were checked on the date shown. Authorities can change their rules; check the official requirements before you submit a photo.',
+    body: 'Each size in the app is based on requirements from the issuing authority named on that spec. We reviewed those rules on the date shown in the app. Requirements can change—confirm the latest official guidance before you submit a photo.',
   },
   {
     title: 'Results',
@@ -78,4 +78,4 @@ export const supportFaqs = [
   },
 ] as const;
 
-export const supportEmail = 'support@passportphotofit.app';
+export const supportEmail = 'support@passportphotofit.lixul.com';

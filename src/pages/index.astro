@@ -3,6 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { appName, appNameShort } from '../data/brand';
+import {
+  defaultDescription,
+  homeTitle,
+  softwareApplicationJsonLd,
+  websiteJsonLd,
+} from '../data/seo';
 
 const features = [
   {
@@ -46,7 +52,12 @@ const steps = [
 ];
 ---
 
-<BaseLayout title={appName}>
+<BaseLayout
+  title={homeTitle}
+  titleIsFull
+  description={defaultDescription}
+  jsonLd={[websiteJsonLd(Astro.site), softwareApplicationJsonLd(Astro.site)]}
+>
   <Header slot="header" />
   <Footer slot="footer" />
 

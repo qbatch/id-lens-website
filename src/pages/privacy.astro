@@ -4,11 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { appNameShort } from '../data/brand';
 import { privacySections } from '../data/site';
+import { webPageJsonLd } from '../data/seo';
+
+const pageTitle = 'Privacy policy';
+const pageDescription = `Learn how ${appNameShort} handles photos and personal data. On-device processing, encrypted storage, optional analytics, and no photo uploads.`;
 ---
 
 <BaseLayout
-  title="Privacy policy"
-  description={`How ${appNameShort} handles your photos and data—everything processed on your phone.`}
+  title={pageTitle}
+  description={pageDescription}
+  jsonLd={webPageJsonLd(pageTitle, pageDescription, Astro.url.pathname, Astro.site)}
 >
   <Header slot="header" />
   <Footer slot="footer" />
