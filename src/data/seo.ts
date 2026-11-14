@@ -1,4 +1,4 @@
-import { appName, appNameShort } from './brand';
+import { appName, appNameShort, appStoreUrl } from './brand';
 
 /** Must match `site` in astro.config.mjs */
 export const siteUrl = 'https://passportphotofit.lixul.com';
@@ -39,7 +39,9 @@ export function softwareApplicationJsonLd(site: URL | string = siteUrl) {
     name: appName,
     alternateName: appNameShort,
     applicationCategory: 'PhotographyApplication',
-    operatingSystem: 'Android, iOS',
+    operatingSystem: 'iOS',
+    downloadUrl: appStoreUrl,
+    installUrl: appStoreUrl,
     offers: {
       '@type': 'Offer',
       price: '0',
