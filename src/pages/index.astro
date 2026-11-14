@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { appName, appNameShort } from '../data/brand';
+import { appName, appNameShort, appStoreUrl } from '../data/brand';
 import {
   defaultDescription,
   homeTitle,
@@ -72,7 +72,7 @@ const steps = [
           Everything stays on your device—no upload, no account.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#download">Get the app</a>
+          <a class="btn btn-primary" href={appStoreUrl}>Get it on the App Store</a>
           <a class="btn btn-secondary" href="/privacy">Privacy first</a>
         </div>
         <ul class="hero-trust" aria-label="Highlights">
@@ -220,13 +220,12 @@ const steps = [
       <div class="download-copy">
         <h2>Get {appNameShort}</h2>
         <p>
-          Install {appNameShort} on your phone to make passport, visa, or exam photos in minutes. Store download links
-          will appear here when the app is available.
+          Free on the App Store. Make passport, visa, ID, or exam photos in minutes. No account, no ads, no
+          in-app purchases, and your photos never leave your iPhone.
         </p>
         <div class="store-actions">
-          <a class="store-btn" href="/support" aria-label={`Download ${appName} — details on support page`}>
-            <span class="store-label">Download</span>
-            <span class="store-sub">See support for availability</span>
+          <a class="store-badge" href={appStoreUrl} aria-label={`Download ${appName} on the App Store`}>
+            <img src="/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" />
           </a>
         </div>
       </div>
@@ -674,6 +673,21 @@ const steps = [
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
+  }
+
+  .store-badge {
+    display: inline-block;
+    line-height: 0;
+    transition: transform var(--transition);
+  }
+
+  .store-badge:hover {
+    transform: translateY(-1px);
+  }
+
+  .store-badge img {
+    height: 60px;
+    width: auto;
   }
 
   .store-btn {

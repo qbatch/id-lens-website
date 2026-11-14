@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { appName, appNameShort } from '../data/brand';
+import { appName, appNameShort, appStoreId } from '../data/brand';
 import { defaultDescription, ogImagePath } from '../data/seo';
 
 interface Props {
@@ -39,6 +39,7 @@ const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview
     <meta name="theme-color" content="#2F5BEA" />
     <meta name="application-name" content={appNameShort} />
     <meta name="apple-mobile-web-app-title" content={appNameShort} />
+    <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />

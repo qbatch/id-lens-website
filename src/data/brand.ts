@@ -9,3 +9,7 @@ export const appExportPrefix = 'PassportPhotoFit';
 
 /** Header / logo subtitle (part after the colon in {@link appName}). */
 export const appNameTagline = 'ID & Visa';
+
+/** App Store listing (US storefront). */
+export const appStoreId = '6831625687';
+export const appStoreUrl = 'https://apps.apple.com/us/app/passport-photo-fit-id-visa/id6831625687';
